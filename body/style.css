@@ -1,0 +1,105 @@
+body {
+    background-image: url('img/Background1.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.center button {
+    background: transparent;
+    cursor: pointer;
+    width: 10%;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 0px;
+    width: 0%;
+    height: 0%;
+    transform: translateY(-50%);
+    background: #fff;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.popup .content {
+    padding: 30px 20px;
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto;
+    opacity: 0;
+}
+
+.Earth {
+    width: 50%;
+    background-position: top left, bottom right;
+}
+
+.popup .content .popup-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 35px;
+    color: #111;
+    font-size: 30px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.popup .content .popup-close-btn:hover {
+    background: #eee;
+}
+
+.popup .content h1 {
+    font-size: 40px;
+    margin: 20px 0px;
+}
+
+.popup .content p {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.popup.active {
+    animation: popupAnimation 1500ms ease-in-out forwards;
+}
+
+.popup.active .content {
+    opacity: 1;
+    transition: all 300ms ease-in-out 1500ms;
+}
+
+@keyframes popupAnimation {
+    0% {
+        width: 0%;
+        height: 0%;
+    }
+    50% {
+        width: 100%;
+        height: 2px;
+    }
+    100% {
+        width: 100%;
+        height: 100%;
+    }
+}
